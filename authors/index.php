@@ -10,19 +10,18 @@
      	echo 'Error fetch author message from database' . $e->getMessage();
      	exit();
      }
+     //数据库不为空时
      foreach ($result as $row)
      {
      	//将数据存储到关联数组中
      	$authors[] = array('id'=>$row['id'], 'name'=>$row['name']);
      }
-     include 'authors.html.php';
-     include 'deleteAuthor.php';
+    if (!empty($authors))
+        include 'authors.html.php';
+    else
+    {
+        echo "<script>alert('NO DATA EXIST IN AUTHOR!');
+              history.back();</script>";
+    } 
      
-    // if (isset($_POST['action']) and $_POST['action'] == 'Delete')
-     //{
-   	   //echo 'Delete ??!! Push Yes to continue, No to cancel ' . '<br/>';
-   	   // include 'confirm.html.php';
-   	// }
-   	// if (isset($_POST['comfirm']) and $_POST['comfirm'] == 'Yes')   include 'deleteAuthor.php'; 
-     //else exit();
 ?>

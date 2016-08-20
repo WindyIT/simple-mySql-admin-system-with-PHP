@@ -48,7 +48,7 @@
 						alert("Error " + request.status);
 			}
 		} 
-		//return false;       
+		return false;  //没有return false会直接刷新页面
 	}
 </script>
 </body>
