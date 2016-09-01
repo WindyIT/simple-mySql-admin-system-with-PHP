@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . 'includes/helpers.inc.php'; ?>;
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . 'includes/helpers.inc.php'; ?>;
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 </head>
 <h2>Manage Author</h2>
 <body>
-<p><a href="?add">Add new author</a></p>
+<p><a href="addAuthor.php">Add new author</a></p>
 <div class="editOrDelete">
 	<ul>
 	  <?php foreach ($authors as $author) : ?>
@@ -17,7 +17,7 @@
 		   	  	<?php html_out($author['name']) ?>
 		   	  	<input type="hidden" name="id" id="id" value="<?php html_out($author['id']); ?>">   
 		   	  	<input type="submit" name="action"  id="Edit" value="Edit">
-		   	  	<input type="submit" name="action" id="Delete" value="Delete">
+		   	  	<input type="submit" name="action" id="Delete" value="Delete" onclick="confirmFunc()">
 		   	  </div>
 		   </form>
 		</li>
@@ -31,7 +31,7 @@
 		var request = new XMLHttpRequest();
 		    request.open()
 	}*/
-	document.getElementById("Delete").onclick = function()
+	function confirmFunc()
 	{
 		var request = new XMLHttpRequest();
 		    request.open("POST","deleteAuthor.php");

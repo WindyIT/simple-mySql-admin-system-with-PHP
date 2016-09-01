@@ -16,12 +16,9 @@
      	//将数据存储到关联数组中
      	$authors[] = array('id'=>$row['id'], 'name'=>$row['name']);
      }
-    if (!empty($authors))
-        include 'authors.html.php';
-    else
-    {
-        echo "<script>alert('NO DATA EXIST IN AUTHOR!');
-              history.back();</script>";
-    } 
-     
+    if (!empty($authors))  include 'authors.html.php';
+    else  include 'noAuthor.html.php';
+        // echo "<script>alert('NO DATA EXIST IN AUTHOR!');
+        //       history.back();</script>";
+        // include 'addAuthor.php';
 ?>

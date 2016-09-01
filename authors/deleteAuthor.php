@@ -1,6 +1,6 @@
 <?php
-   if (isset($_POST['action']) and $_POST['action'] == 'Delete')
-   {
+  // if (isset($_POST['action']) and $_POST['action'] == 'Delete')
+   //{
    	   // echo 'Delete ??!! Push Yes to continue, No to canl ' . '<br/>';
     	include $_SERVER['DOCUMENT_ROOT'] . 'includes/db.inc.php';
     	//从joke中获取要删除的内容
@@ -73,5 +73,5 @@
         }
         header('Location: . ');
         exit();
-   }
+ //  }
 ?>
